@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Phase v1 &bullet; Home</title>
+
+	<link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+	<nav class="navbar is-dark">
+		<div class="navbar-brand">
+			<div class="navbar-item">
+				<h1>Phase</h1>
+			</div>
+		</div>
+		<div class="navbar-menu">
+			<div class="navbar-end">
+				<% if (authenticated) { %>
+					<div class="navbar-item has-dropdown is-hoverable">
+						<a class="navbar-link">
+							<img alt="user avatar" style="margin-right:6px;border-radius:100%;" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" />
+							<%= user.username %>#<%= user.discriminator %>
+						</a>
+
+						<div class="navbar-dropdown">
+							<a class="navbar-item" href="/dashboard/servers">Servers</a>
+							<a class="navbar-item" href="/api/logout">Logout</a>
+						</div>
+					</div>
+				<% } else { %>
+					<a class="navbar-item" href="/dashboard	" >Login</a>
+				<% } %>
+			</div>
+		</div>
+	</nav>
+</body>
+
+</html>
